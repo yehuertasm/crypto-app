@@ -6,10 +6,10 @@ object Versions {
     const val appCompact = "1.4.1"
     const val material = "1.5.0"
     const val constraintLayout = "2.1.3"
-    const val jUnit = "4.13.2"
-    const val testJUnit = "1.1.3"
-    const val espresso = "3.4.0"
     const val hilt = "2.38.1"
     const val hiltViewModel = "1.0.0-alpha03"
     const val multidex = "2.0.1"
+    const val jUnit5 = "5.8.2"
+    const val jUnitExt = "1.4.0"
+    const val mockk = "1.10.0"
 }

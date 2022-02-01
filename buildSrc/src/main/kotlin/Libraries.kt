@@ -5,7 +5,7 @@ object Libraries {
     private val material by lazy { "com.google.android.material:material:${Versions.material}" }
     private val constrainLayout by lazy { "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}" }
     private val hilt by lazy { "com.google.dagger:hilt-android:${Versions.hilt}" }
-    private val hiltViewModel by lazy {  "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModel}" }
+    private val hiltViewModel by lazy { "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModel}" }
     private val multidex by lazy { "androidx.multidex:multidex:${Versions.multidex}" }
 
     val hiltCompiler by lazy { "com.google.dagger:hilt-android-compiler:${Versions.hilt}" }
@@ -23,8 +23,19 @@ object Libraries {
 }
 
 object TestDependencies {
-    val jUnit by lazy { "junit:junit:${Versions.jUnit}" }
-    val extJUnit by lazy { "androidx.test.ext:junit:${Versions.testJUnit}" }
-    val espresso by lazy { "androidx.test.espresso:espresso-core:${Versions.espresso}" }
+    val jUnit5Engine by lazy { "org.junit.jupiter:junit-jupiter-engine:${Versions.jUnit5}" }
+    val jUnitExt by lazy { "androidx.test.ext:junit:${Versions.jUnitExt}" }
+    private val jUnit5 by lazy { "org.junit.jupiter:junit-jupiter-engine:${Versions.jUnit5}" }
+    private val mockk by lazy { "io.mockk:mockk:${Versions.mockk}" }
+    private val kotlinTest by lazy { "org.jetbrains.kotlin:kotlin-test:${Versions.kotlin}" }
+    private val kotlinTestJunit by lazy { "org.jetbrains.kotlin:kotlin-test-junit:${Versions.kotlin}" }
+
+    val suiteTest = arrayOf(
+        mockk,
+        jUnit5,
+        jUnitExt,
+        kotlinTest,
+        kotlinTestJunit
+    )
 }
 

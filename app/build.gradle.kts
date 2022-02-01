@@ -55,9 +55,12 @@ dependencies {
         implementation(it)
     }
 
-    testImplementation(TestDependencies.jUnit)
-    androidTestImplementation(TestDependencies.extJUnit)
-    androidTestImplementation(TestDependencies.espresso)
+    TestDependencies.suiteTest.forEach {
+        testImplementation(it)
+    }
+
+    testRuntimeOnly(TestDependencies.jUnit5Engine)
+    androidTestImplementation(TestDependencies.jUnitExt)
 
     kapt(Libraries.hiltCompiler)
 }
