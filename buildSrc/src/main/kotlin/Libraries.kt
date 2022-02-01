@@ -1,6 +1,7 @@
 object Libraries {
     private val core by lazy { "androidx.core:core-ktx:${Versions.core}" }
     private val appCompact by lazy { "androidx.appcompat:appcompat:${Versions.appCompact}" }
+    private val activityKtx by lazy { "androidx.activity:activity-ktx:${Versions.activityKtx}" }
     private val material by lazy { "com.google.android.material:material:${Versions.material}" }
     private val constrainLayout by lazy { "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}" }
     private val hilt by lazy { "com.google.dagger:hilt-android:${Versions.hilt}" }
@@ -11,6 +12,7 @@ object Libraries {
     val dependencies = arrayOf(
         core,
         appCompact,
+        activityKtx,
         material,
         constrainLayout,
         hilt,

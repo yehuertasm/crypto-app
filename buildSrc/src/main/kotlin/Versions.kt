@@ -2,6 +2,7 @@ object Versions {
     const val gradlePlugin = "7.1.0"
     const val kotlin = "1.6.10"
     const val core = "1.7.0"
+    const val activityKtx = "1.4.0"
     const val appCompact = "1.4.1"
     const val material = "1.5.0"
     const val constraintLayout = "2.1.3"
