@@ -15,4 +15,5 @@ object Versions {
     const val rxJava = "3.0.0"
     const val rxAndroid = "3.0.0"
     const val moshi = "1.12.0"
+    const val room = "2.4.1"
 }

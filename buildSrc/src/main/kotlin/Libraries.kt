@@ -10,9 +10,13 @@ object Libraries {
     private val rxJava by lazy { "io.reactivex.rxjava3:rxjava:${Versions.rxJava}" }
     private val rxAndroid by lazy { "io.reactivex.rxjava3:rxandroid:${Versions.rxAndroid}" }
     private val moshi by lazy { "com.squareup.moshi:moshi-kotlin:${Versions.moshi}" }
-    val moshiCodegen by lazy { "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}" }
+    private val room by lazy { "androidx.room:room-runtime:${Versions.room}" }
+    private val roomExtensions by lazy { "androidx.room:room-ktx:${Versions.room}" }
+    private val roomRx by lazy { "androidx.room:room-rxjava3:${Versions.room}" }
 
+    val moshiCodegen by lazy { "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}" }
     val hiltCompiler by lazy { "com.google.dagger:hilt-android-compiler:${Versions.hilt}" }
+    val roomCompiler by lazy { "androidx.room:room-compiler:${Versions.room}" }
 
     val dependencies = arrayOf(
         core,
@@ -25,7 +29,10 @@ object Libraries {
         multidex,
         rxJava,
         rxAndroid,
-        moshi
+        moshi,
+        room,
+        roomExtensions,
+        roomRx
     )
 }
 
@@ -36,13 +43,15 @@ object TestDependencies {
     private val mockk by lazy { "io.mockk:mockk:${Versions.mockk}" }
     private val kotlinTest by lazy { "org.jetbrains.kotlin:kotlin-test:${Versions.kotlin}" }
     private val kotlinTestJunit by lazy { "org.jetbrains.kotlin:kotlin-test-junit:${Versions.kotlin}" }
+    private val roomTesting by lazy { "androidx.room:room-testing:${Versions.room}" }
 
     val suiteTest = arrayOf(
         mockk,
         jUnit5,
         jUnitExt,
         kotlinTest,
-        kotlinTestJunit
+        kotlinTestJunit,
+        roomTesting
     )
 }
 

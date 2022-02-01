@@ -65,6 +65,7 @@ dependencies {
     kaptTest(Libraries.moshiCodegen)
     kapt(Libraries.moshiCodegen)
     kapt(Libraries.hiltCompiler)
+    kapt(Libraries.roomCompiler)
 }
 
 // Allow references to generated code
