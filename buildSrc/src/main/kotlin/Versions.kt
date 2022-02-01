@@ -12,4 +12,7 @@ object Versions {
     const val jUnit5 = "5.8.2"
     const val jUnitExt = "1.4.0"
     const val mockk = "1.10.0"
+    const val rxJava = "3.0.0"
+    const val rxAndroid = "3.0.0"
+    const val moshi = "1.12.0"
 }

@@ -62,6 +62,8 @@ dependencies {
     testRuntimeOnly(TestDependencies.jUnit5Engine)
     androidTestImplementation(TestDependencies.jUnitExt)
 
+    kaptTest(Libraries.moshiCodegen)
+    kapt(Libraries.moshiCodegen)
     kapt(Libraries.hiltCompiler)
 }
 

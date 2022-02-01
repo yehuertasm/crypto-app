@@ -7,6 +7,10 @@ object Libraries {
     private val hilt by lazy { "com.google.dagger:hilt-android:${Versions.hilt}" }
     private val hiltViewModel by lazy { "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModel}" }
     private val multidex by lazy { "androidx.multidex:multidex:${Versions.multidex}" }
+    private val rxJava by lazy { "io.reactivex.rxjava3:rxjava:${Versions.rxJava}" }
+    private val rxAndroid by lazy { "io.reactivex.rxjava3:rxandroid:${Versions.rxAndroid}" }
+    private val moshi by lazy { "com.squareup.moshi:moshi-kotlin:${Versions.moshi}" }
+    val moshiCodegen by lazy { "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshi}" }
 
     val hiltCompiler by lazy { "com.google.dagger:hilt-android-compiler:${Versions.hilt}" }
 
@@ -18,7 +22,10 @@ object Libraries {
         constrainLayout,
         hilt,
         hiltViewModel,
-        multidex
+        multidex,
+        rxJava,
+        rxAndroid,
+        moshi
     )
 }
 
