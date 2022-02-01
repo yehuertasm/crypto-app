@@ -1,8 +1,8 @@
 package com.android.cryptoapp
 
-import android.app.Application
+import androidx.multidex.MultiDexApplication
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class CryptoApp : Application() {
+class CryptoApp : MultiDexApplication() {
 }

@@ -11,4 +11,5 @@ object Versions {
     const val espresso = "3.4.0"
     const val hilt = "2.38.1"
     const val hiltViewModel = "1.0.0-alpha03"
+    const val multidex = "2.0.1"
 }

@@ -6,6 +6,7 @@ object Libraries {
     private val constrainLayout by lazy { "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}" }
     private val hilt by lazy { "com.google.dagger:hilt-android:${Versions.hilt}" }
     private val hiltViewModel by lazy {  "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModel}" }
+    private val multidex by lazy { "androidx.multidex:multidex:${Versions.multidex}" }
 
     val hiltCompiler by lazy { "com.google.dagger:hilt-android-compiler:${Versions.hilt}" }
 
@@ -16,7 +17,8 @@ object Libraries {
         material,
         constrainLayout,
         hilt,
-        hiltViewModel
+        hiltViewModel,
+        multidex
     )
 }
 
