@@ -24,6 +24,7 @@ class RepositoryModule {
         val database =
             Room.databaseBuilder(context, CurrencyInfoDatabase::class.java, "database-currencies")
                 .fallbackToDestructiveMigration()
+                .createFromAsset("database/currencies.db")
                 .build()
 
         val dao = database.currencyInfoDao()
