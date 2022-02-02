@@ -8,8 +8,9 @@
     android:padding="@dimen/spacing_medium"
     tools:context=".DemoActivity">
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/fragment"
+        android:name="com.android.cryptoapp.CurrencyListFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="@dimen/spacing_medium"

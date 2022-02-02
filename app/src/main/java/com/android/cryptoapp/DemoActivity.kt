@@ -7,6 +7,7 @@ import com.android.cryptoapp.data.DemoNews
 import com.android.cryptoapp.databinding.ActivityDemoBinding
 import com.android.cryptoapp.others.EventObserver
 import com.android.cryptoapp.uiModels.DemoUIModel
+import com.android.cryptoapp.utils.viewBinding
 import com.android.cryptoapp.viewModels.DemoViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -15,20 +16,25 @@ import dagger.hilt.android.AndroidEntryPoint
 class DemoActivity : AppCompatActivity() {
 
     private val viewModel: DemoViewModel by viewModels()
-    private lateinit var binding: ActivityDemoBinding
+    private val binding by viewBinding(ActivityDemoBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityDemoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        initializeListeners()
         initializeObserver()
         initializeSubscription()
     }
 
+    private fun initializeListeners() {
+        binding.buttonLoadData.setOnClickListener {
+            viewModel.getCurrencies()
+        }
+    }
+
     private fun initializeObserver() {
-        viewModel.liveData.observe(this, { observeData(it) })
+        viewModel.liveData.observe(this) { observeData(it) }
     }
 
     private fun initializeSubscription() {
