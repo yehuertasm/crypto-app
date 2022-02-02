@@ -18,7 +18,7 @@ class CurrencyListViewModel @Inject constructor(): ViewModel() {
         _liveData.value = CurrencyListUIModel()
     }
 
-    fun setData(currencyList: ArrayList<Currency>) {
+    fun setData(currencyList: List<Currency>) {
         _liveData.value = liveData.value?.copy(currencies = currencyList)
     }
 }

@@ -3,8 +3,10 @@ package com.android.cryptoapp.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.android.cryptoapp.R
+import com.android.cryptoapp.adapters.diffutil.CurrenciesCallback
 import com.android.cryptoapp.data.CurrencyEvent
 import com.android.cryptoapp.databinding.ItemCurrencyBinding
 import com.android.cryptoapp.entities.data.Currency
@@ -19,8 +21,11 @@ class CurrencyListAdapter : RecyclerView.Adapter<CurrencyListAdapter.CurrencyLis
     val events: Observable<CurrencyEvent> = _events.hide()
 
     fun setData(currenciesList: List<Currency>) {
+        val diffCallback = CurrenciesCallback(currencies, currenciesList)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
         currencies.clear()
         currencies.addAll(currenciesList)
+        diffResult.dispatchUpdatesTo(this)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyListViewHolder {

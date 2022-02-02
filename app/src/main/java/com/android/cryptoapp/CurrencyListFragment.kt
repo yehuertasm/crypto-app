@@ -21,25 +21,18 @@ class CurrencyListFragment : Fragment(R.layout.fragment_currency_list) {
     private var currenciesAdapter = CurrencyListAdapter()
 
     companion object {
-        fun newInstance(currenciesList: ArrayList<Currency>): CurrencyListFragment {
-            val args = Bundle()
-            args.putParcelableArrayList("list", currenciesList);
-            val fragment = CurrencyListFragment()
-            fragment.arguments = args
-            return fragment
+        fun newInstance(): CurrencyListFragment {
+            return CurrencyListFragment()
         }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initializeVieModel()
         initializeObserver()
         initializeRecyclerView()
     }
 
-    private fun initializeVieModel() {
-        val args = arguments
-        val currenciesList: ArrayList<Currency>  = args?.getParcelableArrayList<Currency>("list") as ArrayList<Currency>
+    fun setCurrenciesData(currenciesList: List<Currency>) {
         viewModel.setData(currenciesList)
     }
 

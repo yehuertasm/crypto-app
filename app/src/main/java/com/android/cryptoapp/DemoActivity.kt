@@ -19,14 +19,23 @@ class DemoActivity : AppCompatActivity() {
 
     private val viewModel: DemoViewModel by viewModels()
     private val binding by viewBinding(ActivityDemoBinding::inflate)
+    private val currenciesFragment = CurrencyListFragment.newInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        initializeFragment()
         initializeListeners()
         initializeObserver()
         initializeSubscription()
+    }
+
+    private fun initializeFragment() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment, currenciesFragment)
+            .commit()
     }
 
     private fun initializeListeners() {
@@ -44,9 +53,7 @@ class DemoActivity : AppCompatActivity() {
     }
 
     private fun observeData(data: DemoUIModel) {
-        val fragment: CurrencyListFragment =
-            CurrencyListFragment.newInstance(ArrayList(data.currencies))
-        supportFragmentManager.beginTransaction().replace(R.id.fragment, fragment).commit()
+        currenciesFragment.setCurrenciesData(data.currencies)
     }
 
     private fun handleNews(news: DemoNews) {
