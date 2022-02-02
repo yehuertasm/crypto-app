@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CryptoApp</string>
+    <string name="button_load_data">Load Data</string>
+    <string name="button_sort_list">Sort List</string>
 </resources>
