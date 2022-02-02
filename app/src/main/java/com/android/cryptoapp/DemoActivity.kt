@@ -3,6 +3,8 @@ package com.android.cryptoapp
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.viewModels
 import android.os.Bundle
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.android.cryptoapp.data.DemoNews
 import com.android.cryptoapp.databinding.ActivityDemoBinding
 import com.android.cryptoapp.others.EventObserver
@@ -42,7 +44,9 @@ class DemoActivity : AppCompatActivity() {
     }
 
     private fun observeData(data: DemoUIModel) {
-
+        val fragment: CurrencyListFragment =
+            CurrencyListFragment.newInstance(ArrayList(data.currencies))
+        supportFragmentManager.beginTransaction().replace(R.id.fragment, fragment).commit()
     }
 
     private fun handleNews(news: DemoNews) {
