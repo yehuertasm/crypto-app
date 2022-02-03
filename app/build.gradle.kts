@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("dagger.hilt.android.plugin")
+    id("de.mannodermaus.android-junit5")
     kotlin("android")
     kotlin("kapt")
 }
@@ -55,6 +56,11 @@ android {
         dataBinding = true
         viewBinding = true
     }
+
+    testOptions {
+        unitTests.isIncludeAndroidResources = true
+        unitTests.isReturnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -67,7 +73,8 @@ dependencies {
     }
 
     testRuntimeOnly(TestDependencies.jUnit5Engine)
-    androidTestImplementation(TestDependencies.jUnitExt)
+    androidTestImplementation(TestDependencies.jUnitExtKtx)
+    androidTestImplementation(TestDependencies.testCoreKtx)
 
     kaptTest(Libraries.moshiCodegen)
     kapt(Libraries.moshiCodegen)

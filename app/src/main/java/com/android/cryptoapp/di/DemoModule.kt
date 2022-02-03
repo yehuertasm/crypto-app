@@ -4,8 +4,10 @@ import com.android.cryptoapp.data.CryptoAppResources
 import com.android.cryptoapp.entities.data.Currency
 import com.android.cryptoapp.entities.interfaces.AppResources
 import com.android.cryptoapp.entities.qualifiers.GetCurrencies
+import com.android.cryptoapp.entities.qualifiers.SortCurrencies
 import com.android.cryptoapp.others.SingleUseCase
 import com.android.cryptoapp.usecases.GetCurrenciesUseCase
+import com.android.cryptoapp.usecases.SortCurrenciesUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,6 +20,10 @@ abstract class DemoModule {
     @Binds
     @GetCurrencies
     abstract fun bindGetCurrenciesUseCase(getCurrenciesUseCase: GetCurrenciesUseCase): SingleUseCase<Unit, List<Currency>>
+
+    @Binds
+    @SortCurrencies
+    abstract fun bindSortCurrenciesUseCase(sortCurrenciesUseCase: SortCurrenciesUseCase): SingleUseCase<List<Currency>, List<Currency>>
 
     @Binds
     abstract fun bindResources(cryptoAppResources: CryptoAppResources): AppResources

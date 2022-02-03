@@ -51,9 +51,7 @@ class CurrencyListViewModel @Inject constructor(
                         is CurrencyEvent.CurrencySelected -> showMessage(it.name)
                     }
                 }.subscribeOn(Schedulers.io())
-                .subscribe({
-
-                }, {
+                .subscribe({}, {
                     handleError()
                 })
         )

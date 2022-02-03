@@ -4,3 +4,6 @@ import javax.inject.Qualifier
 
 @Qualifier
 annotation class GetCurrencies
+
+@Qualifier
+annotation class SortCurrencies

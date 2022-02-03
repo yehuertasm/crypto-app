@@ -40,18 +40,22 @@ object Libraries {
 
 object TestDependencies {
     val jUnit5Engine by lazy { "org.junit.jupiter:junit-jupiter-engine:${Versions.jUnit5}" }
-    val jUnitExt by lazy { "androidx.test.ext:junit:${Versions.jUnitExt}" }
+    val jUnitExtKtx by lazy { "androidx.test.ext:junit:${Versions.jUnitExtKtx}" }
+    val testCoreKtx by lazy { "androidx.test:core-ktx:${Versions.testCoreKtx}" }
     private val jUnit5 by lazy { "org.junit.jupiter:junit-jupiter-engine:${Versions.jUnit5}" }
     private val mockk by lazy { "io.mockk:mockk:${Versions.mockk}" }
     private val kotlinTest by lazy { "org.jetbrains.kotlin:kotlin-test:${Versions.kotlin}" }
-    private val kotlinTestJunit by lazy { "org.jetbrains.kotlin:kotlin-test-junit:${Versions.kotlin}" }
+    private val kotlinReflect by lazy { "org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}" }
+    private val kotlinTestJunit by lazy { "org.jetbrains.kotlin:kotlin-test-junit5:${Versions.kotlin}" }
     private val roomTesting by lazy { "androidx.room:room-testing:${Versions.room}" }
 
     val suiteTest = arrayOf(
         mockk,
         jUnit5,
-        jUnitExt,
+        jUnitExtKtx,
+        testCoreKtx,
         kotlinTest,
+        kotlinReflect,
         kotlinTestJunit,
         roomTesting
     )

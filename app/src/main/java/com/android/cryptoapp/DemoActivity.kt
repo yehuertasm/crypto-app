@@ -42,6 +42,10 @@ class DemoActivity : AppCompatActivity(), ActionListener {
         binding.buttonLoadData.setOnClickListener {
             viewModel.getCurrencies()
         }
+
+        binding.buttonSortCurrencies.setOnClickListener {
+            viewModel.sortCurrencies()
+        }
     }
 
     private fun initializeObserver() {
