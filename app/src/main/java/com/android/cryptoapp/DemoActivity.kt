@@ -1,12 +1,12 @@
 package com.android.cryptoapp
 
-import androidx.appcompat.app.AppCompatActivity
-import androidx.activity.viewModels
 import android.os.Bundle
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.android.cryptoapp.data.DemoNews
 import com.android.cryptoapp.databinding.ActivityDemoBinding
+import com.android.cryptoapp.entities.interfaces.ActionListener
 import com.android.cryptoapp.others.EventObserver
 import com.android.cryptoapp.uiModels.DemoUIModel
 import com.android.cryptoapp.utils.viewBinding
@@ -15,7 +15,7 @@ import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DemoActivity : AppCompatActivity() {
+class DemoActivity : AppCompatActivity(), ActionListener {
 
     private val viewModel: DemoViewModel by viewModels()
     private val binding by viewBinding(ActivityDemoBinding::inflate)
@@ -60,5 +60,13 @@ class DemoActivity : AppCompatActivity() {
         if (news is DemoNews.ShowMessage) {
             Snackbar.make(binding.layoutDemo, news.message, Snackbar.LENGTH_LONG).show()
         }
+    }
+
+    override fun onCurrencySelected(currencyName: String) {
+        Toast.makeText(
+            this,
+            getString(R.string.currency_selected_message, currencyName),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }

@@ -1,5 +1,7 @@
 package com.android.cryptoapp.data
 
 sealed class CurrencyEvent {
-    object CurrencySelected: CurrencyEvent()
+    data class CurrencySelected(
+        val name: String
+    ) : CurrencyEvent()
 }

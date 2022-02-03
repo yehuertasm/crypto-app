@@ -45,13 +45,16 @@ class CurrencyListAdapter : RecyclerView.Adapter<CurrencyListAdapter.CurrencyLis
 
         private val binding = ItemCurrencyBinding.bind(itemView)
 
+        private lateinit var currencyName: String
+
         init {
             itemView.setOnClickListener {
-                _events.onNext(CurrencyEvent.CurrencySelected)
+                _events.onNext(CurrencyEvent.CurrencySelected(currencyName))
             }
         }
 
         fun bind(currency: Currency) {
+            currencyName = currency.name
             binding.tvSymbol.text = currency.symbol
             binding.tvName.text = currency.name
         }

@@ -2,5 +2,6 @@
     <string name="app_name">CryptoApp</string>
     <string name="button_load_data">Load Data</string>
     <string name="button_sort_list">Sort List</string>
+    <string name="currency_selected_message">%s has been selected!</string>
     <string name="error_getting_data">Error retrieving data</string>
 </resources>
